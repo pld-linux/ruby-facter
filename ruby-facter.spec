@@ -3,14 +3,14 @@
 Summary:	Facter
 Summary(pl.UTF-8):	Facter
 Name:		facter
-Version:	1.5.2
+Version:	1.5.9rc5
 Release:	0.1
 License:	GPL v2+
 Group:		Networking/Admin
-Source0:	http://www.reductivelabs.com/downloads/facter/%{name}-%{version}.tgz
-# Source0-md5:	3d257bc2755217690fca868c0fa0cc7b
-#Patch0:		%{name}-amd64.patch
-URL:		http://www.reductivelabs.com/projects/facter/
+Source0:	http://puppetlabs.com/downloads/facter/%{name}-%{version}.tar.gz
+# Source0-md5:	9fe23f971d2659122df387804bdff77a
+#Patch0: %{name}-amd64.patch
+URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
 BuildRequires:	docutils
 BuildRequires:	rpmbuild(macros) >= 1.277
 BuildRequires:	ruby
