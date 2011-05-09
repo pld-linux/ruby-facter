@@ -1,39 +1,44 @@
-# TODO
-# for man - rst2man.py needed (docutils snap?)
-Summary:	Facter
-Summary(pl.UTF-8):	Facter
-Name:		facter
-Version:	1.5.9rc5
-Release:	0.1
+%define		pkgname facter
+%define		subver	rc5
+%define		rel		1
+Summary:	Ruby module for collecting simple facts about a host operating system
+Name:		ruby-%{pkgname}
+Version:	1.5.9
+Release:	0.%{subver}.%{rel}
 License:	GPL v2+
 Group:		Networking/Admin
-Source0:	http://puppetlabs.com/downloads/facter/%{name}-%{version}.tar.gz
+Source0:	http://puppetlabs.com/downloads/facter/%{pkgname}-%{version}%{subver}.tar.gz
 # Source0-md5:	9fe23f971d2659122df387804bdff77a
-#Patch0: %{name}-amd64.patch
 URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
 BuildRequires:	docutils
-BuildRequires:	rpmbuild(macros) >= 1.277
-BuildRequires:	ruby
-#%{?ruby_mod_ver_requires_eq}
+BuildRequires:	rpmbuild(macros) >= 1.484
+BuildRequires:	ruby >= 1:1.8.6
+BuildRequires:	ruby-modules
+Obsoletes:	facter
+%{?ruby_mod_ver_requires_eq}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%description
-Facter.
+# nothing to be placed there. we're not noarch only because of ruby packaging
+%define		_enable_debug_packages	0
 
-%description -l pl.UTF-8
-Facter.
+%description
+Ruby module for collecting simple facts about a host Operating system.
+Some of the facts are preconfigured, such as the hostname and the
+operating system. Additional facts can be added through simple Ruby
+scripts
 
 %prep
-%setup -q
+%setup -q -n %{pkgname}-%{version}%{subver}
 
 %build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{ruby_sitelibdir}
-
-ruby install.rb \
+%{__ruby} install.rb \
+	--quick \
 	--no-man \
+	--no-rdoc \
 	--destdir=$RPM_BUILD_ROOT
 
 %clean
