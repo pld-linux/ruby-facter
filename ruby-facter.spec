@@ -1,12 +1,12 @@
 %define		pkgname facter
 Summary:	Ruby module for collecting simple facts about a host operating system
 Name:		ruby-%{pkgname}
-Version:	1.6.6
+Version:	1.6.18
 Release:	1
 License:	GPL v2+
 Group:		Networking/Admin
 Source0:	http://downloads.puppetlabs.com/%{pkgname}/%{pkgname}-%{version}.tar.gz
-# Source0-md5:	47670a59301d6c3e31a1c68747b139c8
+# Source0-md5:	c209df5909ccd4112c19cf4b535027a7
 URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
 BuildRequires:	docutils
 BuildRequires:	rpmbuild(macros) >= 1.484
@@ -54,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc CHANGELOG README.md etc/facter.conf
+%doc README.md etc/facter.conf
 %attr(755,root,root) %{_bindir}/facter
 %{ruby_sitelibdir}/facter
 %{ruby_sitelibdir}/facter.rb
