@@ -23,6 +23,9 @@ Obsoletes:	facter < 1.5.9
 #BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+# nothing to be placed there. we're not noarch only because of arch dependant requires
+%define		_enable_debug_packages	0
+
 %description
 Facter is a lightweight program that gathers basic node information
 about the hardware and operating system. Facter is especially useful
