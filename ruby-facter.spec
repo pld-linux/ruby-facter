@@ -2,7 +2,7 @@
 Summary:	Ruby module for collecting simple facts about a host operating system
 Name:		ruby-%{pkgname}
 Version:	1.6.18
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://downloads.puppetlabs.com/%{pkgname}/%{pkgname}-%{version}.tar.gz
