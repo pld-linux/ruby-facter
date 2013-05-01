@@ -4,14 +4,13 @@ Name:		ruby-%{pkgname}
 Version:	1.6.18
 Release:	1
 License:	GPL v2+
-Group:		Networking/Admin
+Group:		Development/Languages
 Source0:	http://downloads.puppetlabs.com/%{pkgname}/%{pkgname}-%{version}.tar.gz
 # Source0-md5:	c209df5909ccd4112c19cf4b535027a7
-URL:		http://www.puppetlabs.com/puppet/related-projects/facter/
+URL:		http://puppetlabs.com/puppet/related-projects/facter/
 BuildRequires:	docutils
-BuildRequires:	rpmbuild(macros) >= 1.484
-BuildRequires:	ruby >= 1:1.8.6
-BuildRequires:	ruby-modules
+BuildRequires:	rpm-rubyprov
+BuildRequires:	rpmbuild(macros) >= 1.656
 Requires:	net-tools
 Requires:	which
 # dmidecode and pciutils are not available on all arches
@@ -19,12 +18,10 @@ Requires:	which
 Requires:	dmidecode
 Requires:	pciutils
 %endif
-Obsoletes:	facter
-%{?ruby_mod_ver_requires_eq}
+Obsoletes:	facter < 1.5.9
+# due arch specific dependencies
+#BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-# nothing to be placed there. we're not noarch only because of ruby packaging
-%define		_enable_debug_packages	0
 
 %description
 Facter is a lightweight program that gathers basic node information
@@ -47,6 +44,7 @@ install -d $RPM_BUILD_ROOT%{ruby_sitelibdir}
 	--quick \
 	--no-man \
 	--no-rdoc \
+	--sitelibdir=%{ruby_vendorlibdir} \
 	--destdir=$RPM_BUILD_ROOT
 
 %clean
@@ -56,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README.md etc/facter.conf
 %attr(755,root,root) %{_bindir}/facter
-%{ruby_sitelibdir}/facter
-%{ruby_sitelibdir}/facter.rb
+%{ruby_vendorlibdir}/facter
+%{ruby_vendorlibdir}/facter.rb
