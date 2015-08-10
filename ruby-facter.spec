@@ -11,6 +11,7 @@ URL:		https://puppetlabs.com/facter
 BuildRequires:	docutils
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.656
+Requires:	lsb-release
 Requires:	net-tools
 Requires:	which
 # dmidecode and pciutils are not available on all arches
