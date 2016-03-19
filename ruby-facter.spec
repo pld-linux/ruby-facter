@@ -2,7 +2,7 @@
 Summary:	Ruby module for collecting simple facts about a host operating system
 Name:		ruby-%{pkgname}
 Version:	2.4.4
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
