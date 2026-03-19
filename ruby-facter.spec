@@ -1,12 +1,12 @@
 %define		pkgname facter
 Summary:	Ruby module for collecting simple facts about a host operating system
 Name:		ruby-%{pkgname}
-Version:	2.4.4
-Release:	2
+Version:	2.5.7
+Release:	1
 License:	GPL v2+
 Group:		Development/Languages
 Source0:	http://rubygems.org/downloads/%{pkgname}-%{version}.gem
-# Source0-md5:	0e8806dbfaa5b9b0b7b7f19c725aab1d
+# Source0-md5:	13b29436cc50caa7a8eeef8c4e1c8d36
 URL:		https://puppetlabs.com/facter
 BuildRequires:	docutils
 BuildRequires:	rpm-rubyprov
