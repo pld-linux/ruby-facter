@@ -1,0 +1,32 @@
+--- facter-4.10.0.orig/bin/facter	2024-10-17 00:00:00.000000000 +0000
++++ facter-4.10.0/bin/facter	2024-10-17 00:00:00.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#!/usr/bin/ruby
+ # frozen_string_literal: true
+
+ require 'pathname'
+--- facter-4.10.0.orig/lib/docs/generate.rb	2024-10-17 00:00:00.000000000 +0000
++++ facter-4.10.0/lib/docs/generate.rb	2024-10-17 00:00:00.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#!/usr/bin/ruby
+ # frozen_string_literal: true
+
+ # Generates a markdown file containing fact documentation.
+--- facter-4.10.0.orig/lib/facter/framework/cli/cli.rb	2024-10-17 00:00:00.000000000 +0000
++++ facter-4.10.0/lib/facter/framework/cli/cli.rb	2024-10-17 00:00:00.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#!/usr/bin/ruby
+ # frozen_string_literal: true
+
+ require 'thor'
+--- facter-4.10.0.orig/lib/facter/framework/cli/cli_launcher.rb	2024-10-17 00:00:00.000000000 +0000
++++ facter-4.10.0/lib/facter/framework/cli/cli_launcher.rb	2024-10-17 00:00:00.000000000 +0000
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env ruby
++#!/usr/bin/ruby
+ # frozen_string_literal: true
+
+ require_relative '../../../facter/framework/logging/logger'
